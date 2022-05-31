@@ -21,12 +21,10 @@ gcsfs
 google-cloud-storage
 mlflow
 s3fs
+meteostat==1.6.1
 
 # utilities
 six>=1.14
 joblib
 memoized-property
 termcolor
-
-# weather API
-meteostat==1.6.1
