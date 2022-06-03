@@ -22,6 +22,7 @@ google-cloud-storage
 mlflow
 s3fs
 meteostat==1.6.1
+requests
 
 # utilities
 six>=1.14
@@ -33,3 +34,15 @@ termcolor
 pyhafas
 jupyterlab
 folium
+
+#plotting
+matplotlib
+seaborn
+
+#ML
+tensorflow
+sklearn
+
+# engineering
+uvicorn
+fastapi
