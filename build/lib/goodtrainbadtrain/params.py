@@ -34,7 +34,7 @@ BUCKET_TRAIN_DATA_PATH = 'wagon-data-881-macnee/train_1k.csv'
 ##### Model - - - - - - - - - - - - - - - - - - - - - - - -
 
 # model folder name (will contain the folders for all trained model versions)
-MODEL_NAME = 'taxifare'
+MODEL_NAME = 'goodtrainbadtrain'
 
 # model version folder name (where the trained model.joblib file will be stored)
 MODEL_VERSION = 'v2'

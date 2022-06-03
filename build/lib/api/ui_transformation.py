@@ -15,28 +15,28 @@ def ui_transformer(start_city, end_city, user_date):
     - weekday: input(When are you going?) ---> Calendar menu (no more than 8 days (?))
     """
 
-    #if isinstance(user_date == str):
-    #user_date = datetime.strptime(user_date, format='%Y-%m-%d %H:%M')
+    if isinstance(user_date == str):
+        user_date = datetime.strptime(user_date, format='%Y-%m-%d %H:%M')
+
+    assert isinstance(user_date == datetime)
+
+    weekday = user_date.weekday()
+    month = user_date.month
+
+    time_of_day_cat = ['night', 'morning', 'afternoon', 'evening']
+    if 0 < user_date.hour < 6:
+        time_of_day = time_of_day_cat[0]
+    elif 6 < user_date.hour < 12:
+        time_of_day = time_of_day_cat[1]
+    elif 12 < user_date.hour < 18:
+        time_of_day = time_of_day_cat[2]
+    elif 18 < user_date.hour < 24:
+        time_of_day = time_of_day_cat[3]
 
     # get weather forecast
     key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
-    start_date = datetime.strftime(user_date, format='%Y-%m-%d %H:%M')
-    end_date = datetime.strftime(user_date + timedelta(1), format='%Y-%m-%d %H:%M')
-
-    #assert isinstance(user_date == datetime)
-
-    weekday = start_date.weekday()
-    month = start_date.month
-
-    time_of_day_cat = ['night', 'morning', 'afternoon', 'evening']
-    if 0 < start_date.hour < 6:
-        time_of_day = time_of_day_cat[0]
-    elif 6 < start_date.hour < 12:
-        time_of_day = time_of_day_cat[1]
-    elif 12 < start_date.hour < 18:
-        time_of_day = time_of_day_cat[2]
-    elif 18 < start_date.hour < 24:
-        time_of_day = time_of_day_cat[3]
+    start_date = datetime.strftime(user_date, format='%Y-%m-%d')
+    end_date = datetime.strftime(user_date + timedelta(1), format='%Y-%m-%d')
 
     stations_lat_lon = pd.read_csv('../raw_data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
     stations = ['Köln Hbf', 'München Hbf']
