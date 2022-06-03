@@ -56,8 +56,7 @@ def ui_transformer(start_city, end_city, user_date):
         days_list = pd.date_range(start_date, end_date)
         variables = ['datetime', 'temp', 'precip', 'snow', 'windspeed', 'windgust', 'conditions']
         sw_f = pd.DataFrame(columns=variables)
-        d_c = 0
-        for i, d in enumerate(days_list):
+        for i, _ in enumerate(days_list):
             for h in range(24):
                 date = response['days'][i]['datetime']
                 hour = datetime.strftime(pd.to_datetime(h, format='%H'), '%H:%M:%S')
