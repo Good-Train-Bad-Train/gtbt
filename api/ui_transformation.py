@@ -15,15 +15,33 @@ def ui_transformer(start_city, end_city, user_date):
     - weekday: input(When are you going?) ---> Calendar menu (no more than 8 days (?))
     """
 
-    #if isinstance(user_date == str):
-    #user_date = datetime.strptime(user_date, format='%Y-%m-%d %H:%M')
+    if start_city == 'Munchen':
+        start_city = 'München'
+    elif start_city == 'Koln':
+        start_city = 'Köln'
+    elif start_city == 'Wurzburg':
+        start_city = 'Würzburg'
+    elif start_city == 'Nurnberg':
+        start_city = 'Nürnberg'
+
+    if end_city == 'Munchen':
+        end_city = 'München'
+    elif end_city == 'Koln':
+        end_city = 'Köln'
+    elif end_city == 'Wurzburg':
+        end_city = 'Würzburg'
+    elif end_city == 'Nurnberg':
+        end_city = 'Nürnberg'
+
+    assert isinstance(user_date, str)
 
     # get weather forecast
     key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
-    start_date = datetime.strftime(user_date, format='%Y-%m-%d %H:%M')
-    end_date = datetime.strftime(user_date + timedelta(1), format='%Y-%m-%d %H:%M')
+    start_date = datetime.strptime(user_date, '%Y-%m-%d %H:%M')
+    end_date = start_date + timedelta(1)
 
-    #assert isinstance(user_date == datetime)
+    start_date_str = datetime.strftime(start_date, '%Y-%m-%d')
+    end_date_str = datetime.strftime(end_date, '%Y-%m-%d')
 
     weekday = start_date.weekday()
     month = start_date.month
@@ -38,8 +56,15 @@ def ui_transformer(start_city, end_city, user_date):
     elif 18 < start_date.hour < 24:
         time_of_day = time_of_day_cat[3]
 
-    stations_lat_lon = pd.read_csv('../raw_data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
-    stations = ['Köln Hbf', 'München Hbf']
+    stations_lat_lon = pd.read_csv('goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
+    stations = ['Köln Hbf',
+                'München Hbf',
+                # 'Mannheim Hbf',
+                # 'Stuttgart Hbf',
+                # 'Würzburg Hbf',
+                # 'Frankfurt(Main)Hbf',
+                # 'Nürnberg Hbf'
+                ]
 
     weather_response = {}
     weather = {}
@@ -48,7 +73,8 @@ def ui_transformer(start_city, end_city, user_date):
         lat = stations_lat_lon[stations_lat_lon['NAME'] == station]['Y'].mean()
         lon = stations_lat_lon[stations_lat_lon['NAME'] == station]['X'].mean()
 
-        url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + str(lat) + "," + str(lon) + "/" + start_date + "/" + end_date + "?key=" + key + "&unitGroup=metric"
+        url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"\
+            + str(lat) + "," + str(lon) + "/" + start_date_str + "/" + end_date_str + "?key=" + key + "&unitGroup=metric"
         response = requests.get(url).json()
 
         weather_response[station] = response
@@ -75,7 +101,7 @@ def ui_transformer(start_city, end_city, user_date):
 
         weather[station] = sw_f
 
-    coco_forecast = pd.read_csv('../raw_data/weather_coco_forecast.csv', sep=';')
+    coco_forecast = pd.read_csv('goodtrainbadtrain/data/weather_coco_forecast.csv', sep=';')
     coco_forecast.set_index('Code', inplace=True)
     coco_forecast = coco_forecast.to_dict()['Weather Condition']
     coco_forecast
