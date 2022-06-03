@@ -38,8 +38,15 @@ def ui_transformer(start_city, end_city, user_date):
     start_date = datetime.strftime(user_date, format='%Y-%m-%d')
     end_date = datetime.strftime(user_date + timedelta(1), format='%Y-%m-%d')
 
-    stations_lat_lon = pd.read_csv('../raw_data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
-    stations = ['Köln Hbf', 'München Hbf']
+    stations_lat_lon = pd.read_csv('../goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
+    stations = ['Köln Hbf',
+                'München Hbf',
+                # 'Mannheim Hbf',
+                # 'Stuttgart Hbf',
+                # 'Würzburg Hbf',
+                # 'Frankfurt(Main)Hbf',
+                # 'Nürnberg Hbf'
+                ]
 
     weather_response = {}
     weather = {}
@@ -75,7 +82,7 @@ def ui_transformer(start_city, end_city, user_date):
 
         weather[station] = sw_f
 
-    coco_forecast = pd.read_csv('../raw_data/weather_coco_forecast.csv', sep=';')
+    coco_forecast = pd.read_csv('../goodtrainbadtrain/data/weather_coco_forecast.csv', sep=';')
     coco_forecast.set_index('Code', inplace=True)
     coco_forecast = coco_forecast.to_dict()['Weather Condition']
     coco_forecast
