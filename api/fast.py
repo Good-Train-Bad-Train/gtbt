@@ -19,13 +19,13 @@ def index():
     return {"greeting": "Hello world"}
 
 @app.get("/predict")
-def predict(start_city, end_city, user_date):
+def predict(start_city: str, end_city: str, user_date: str):
 
     X_pred = ui_transformer(start_city, end_city, user_date)
     pipeline = joblib.load('model.joblib')
     y_pred = pipeline.predict(X_pred)
 
-    return {"Delay": y_pred[0]}
+    return dict(Delay = int(y_pred[0]))
 
 if __name__ == "__main__":
     y_pred = predict('München',
@@ -33,7 +33,7 @@ if __name__ == "__main__":
                      '2022-06-06 17:00')
     print(y_pred)
 
-#http://127.0.0.1:8000/predict?start_city=München&end_city=Köln&user_date=2022-06-06%17:00
+#http://127.0.0.1:8000/predict?start_city=Munchen&end_city=Koln&user_date=2022-06-06 17:00
 #
 #
 # &dropoff_longitude=-73.984365&dropoff_latitude=40.769802&passenger_count=1

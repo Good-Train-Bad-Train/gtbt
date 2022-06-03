@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import joblib
-
-from ui_transformation import ui_transformer
+from api.ui_transformation import ui_transformer
 
 app = FastAPI()
 
@@ -34,4 +33,7 @@ if __name__ == "__main__":
                      '2022-06-06 17:00')
     print(y_pred)
 
-#http://127.0.0.1:8000/predict?pickup_datetime=2013-07-06%2017:18:00&pickup_longitude=-73.950655&pickup_latitude=40.783282&dropoff_longitude=-73.984365&dropoff_latitude=40.769802&passenger_count=1
+#http://127.0.0.1:8000/predict?start_city=München&end_city=Köln&user_date=2022-06-06%17:00
+#
+#
+# &dropoff_longitude=-73.984365&dropoff_latitude=40.769802&passenger_count=1
