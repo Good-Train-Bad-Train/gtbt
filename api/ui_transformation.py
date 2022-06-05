@@ -59,11 +59,11 @@ def ui_transformer(start_city, end_city, user_date):
     stations_lat_lon = pd.read_csv('goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
     stations = ['Köln Hbf',
                 'München Hbf',
-                # 'Mannheim Hbf',
-                # 'Stuttgart Hbf',
-                # 'Würzburg Hbf',
-                # 'Frankfurt(Main)Hbf',
-                # 'Nürnberg Hbf'
+                'Mannheim Hbf',
+                'Stuttgart Hbf',
+                'Würzburg Hbf',
+                'Frankfurt(Main)Hbf',
+                'Nürnberg Hbf'
                 ]
 
     weather_response = {}
@@ -73,9 +73,10 @@ def ui_transformer(start_city, end_city, user_date):
         lat = stations_lat_lon[stations_lat_lon['NAME'] == station]['Y'].mean()
         lon = stations_lat_lon[stations_lat_lon['NAME'] == station]['X'].mean()
 
-        url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"\
-            + str(lat) + "," + str(lon) + "/" + start_date_str + "/" + end_date_str + "?key=" + key + "&unitGroup=metric"
-        response = requests.get(url).json()
+        url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{str(lat)},{str(lon)}/{start_date_str}/{end_date_str}"
+        params = {'key': key,
+                  'unitGroup': 'metric'}
+        response = requests.get(url, params=params).json()
 
         weather_response[station] = response
 
