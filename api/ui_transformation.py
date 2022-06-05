@@ -37,7 +37,10 @@ def ui_transformer(start_city, end_city, user_date):
 
     # get weather forecast
     key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
-    start_date = datetime.strptime(user_date, '%Y-%m-%d %H:%M')
+
+    start_date = pd.Timestamp(user_date).round('H')
+    user_date_round_str = datetime.strftime(start_date, '%Y-%m-%d %H:%M')
+    #start_date = datetime.strptime(user_date, '%Y-%m-%d %H:%M')
     end_date = start_date + timedelta(1)
 
     start_date_str = datetime.strftime(start_date, '%Y-%m-%d')
@@ -130,12 +133,12 @@ def ui_transformer(start_city, end_city, user_date):
     # Build prediction dataframe
     X = pd.DataFrame({
         'trip': '-'.join([start_city, end_city]),
-        'temp': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['temp'],
-        'prcp': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['prcp'],
-        'wspd': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['wspd'],
-        'wpgt': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['wpgt'],
-        'snow': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['snow'],
-        'coco': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date]['coco'],
+        'temp': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['temp'],
+        'prcp': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['prcp'],
+        'wspd': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['wspd'],
+        'wpgt': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['wpgt'],
+        'snow': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['snow'],
+        'coco': weather[end_city + ' Hbf'][weather[end_city + ' Hbf']['time'] == user_date_round_str]['coco'],
         'weekday': weekday,
         'month': month,
         'time_of_day':time_of_day
