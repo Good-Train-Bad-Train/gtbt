@@ -2,9 +2,9 @@ streamlit
 folium
 numpy
 pandas
-time
 datetime
 streamlit_folium
 requests
 openrouteservice
 gunicorn
+pyhafas
