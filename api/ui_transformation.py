@@ -56,7 +56,7 @@ def ui_transformer(start_city, end_city, user_date):
     elif 18 < start_date.hour < 24:
         time_of_day = time_of_day_cat[3]
 
-    stations_lat_lon = pd.read_csv('goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
+    stations_lat_lon = pd.read_csv('api/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
     stations = ['Köln Hbf',
                 'München Hbf',
                 # 'Mannheim Hbf',
@@ -101,7 +101,7 @@ def ui_transformer(start_city, end_city, user_date):
 
         weather[station] = sw_f
 
-    coco_forecast = pd.read_csv('goodtrainbadtrain/data/weather_coco_forecast.csv', sep=';')
+    coco_forecast = pd.read_csv('api/data/weather_coco_forecast.csv', sep=';')
     coco_forecast.set_index('Code', inplace=True)
     coco_forecast = coco_forecast.to_dict()['Weather Condition']
     coco_forecast
