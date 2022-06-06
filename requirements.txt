@@ -7,7 +7,6 @@ wheel>=0.29
 # data science
 numpy==1.22.4
 pandas==1.4.2
-scikit-learn==0.22
 
 # tests/linter
 black
@@ -40,9 +39,12 @@ matplotlib
 seaborn
 
 #ML
-tensorflow
-sklearn
+tensorflow==2.9.1
+scikit-learn
 
 # engineering
 uvicorn
 fastapi
+
+# web
+streamlit
