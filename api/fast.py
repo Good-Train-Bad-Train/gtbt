@@ -30,7 +30,7 @@ def predict(start_city: str, end_city: str, user_date: str):
 if __name__ == "__main__":
     y_pred = predict('München',
                      'Köln',
-                     '2022-06-06 17:00')
+                     '2022-06-06 17:27')
     print(y_pred)
 
 #http://127.0.0.1:8000/predict?start_city=Munchen&end_city=Koln&user_date=2022-06-06 17:00
