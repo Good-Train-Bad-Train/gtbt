@@ -91,17 +91,17 @@ def create_map(coordlist1,coordlist2,coordlist3):
     normalweight=4
     selectedweight=6
     if checkbox1:
-        aline1=folium.PolyLine(locations=leglist1,weight=selectedweight,color = 'blue')  
+        aline1=folium.PolyLine(locations=leglist1,weight=selectedweight,color = '#E55635')  
     else:
-        aline1=folium.PolyLine(locations=leglist1,weight=normalweight,color = 'blue')
+        aline1=folium.PolyLine(locations=leglist1,weight=normalweight,color = '#E55635')
     if checkbox2:
-        aline2=folium.PolyLine(locations=leglist2,weight=selectedweight,color = 'purple')
+        aline2=folium.PolyLine(locations=leglist2,weight=selectedweight,color = '#EC9706')
     else:
-        aline2=folium.PolyLine(locations=leglist2,weight=normalweight,color = 'purple')
+        aline2=folium.PolyLine(locations=leglist2,weight=normalweight,color = '#EC9706')
     if checkbox3:
-        aline3=folium.PolyLine(locations=leglist3,weight=selectedweight,color = 'orange')
+        aline3=folium.PolyLine(locations=leglist3,weight=selectedweight,color = '#7A3803')
     else:
-        aline3=folium.PolyLine(locations=leglist3,weight=normalweight,color = 'orange')
+        aline3=folium.PolyLine(locations=leglist3,weight=normalweight,color = '#7A3803')
     m.add_child(aline1)
     m.add_child(aline2)
     m.add_child(aline3)
@@ -204,41 +204,41 @@ if center_button:
     string2 = f'{journeydf.Origin[1]} ({journeydf.Start[1]}) to {journeydf.Destination[1]} ({journeydf.End[1]}), with {journeydf.Connections[1]-1} connections'
     string3 = f'{journeydf.Origin[2]} ({journeydf.Start[2]}) to {journeydf.Destination[2]} ({journeydf.End[2]}), with {journeydf.Connections[2]-1} connections'
        
-    colcheck11,colcheck12,colcheck13,colcheck14 =st.columns([10,3,1,1])
+    colcheck11,colcheck12,colcheck13,colcheck14 =st.columns([1,10,3,1])
     with colcheck11:
-        checkbox1 = st.checkbox(string1,value = True)       
+        st.image('gtbt_icon_blue.png',width=15)
     with colcheck12:
+        checkbox1 = st.checkbox(string1,value = True) 
+    with colcheck13:
         st.markdown("""
         <font color='green'>
         No delays</font>""",unsafe_allow_html=True)
-    with colcheck13:
-        st.image('gtbt_good_green.png',width=20)
     with colcheck14:
-        st.image('gtbt_icon_blue.png',width=15)
-
-    colcheck21,colcheck22,colcheck23,colcheck24 =st.columns([10,3,1,1])   
+        st.image('gtbt_good_green.png',width=20)
+  
+    colcheck21,colcheck22,colcheck23,colcheck24 =st.columns([1,10,3,1])   
     with colcheck21:
-        checkbox2 = st.checkbox(string2,value = False)
+        st.image('gtbt_icon_yellow.png',width=15)
     with colcheck22:
+        checkbox2 = st.checkbox(string2,value = False)
+    with colcheck23:
         st.markdown("""
         <font color='green'>
         Small delay</font>""",unsafe_allow_html=True)
-    with colcheck23:
-        st.image('gtbt_good_green.png',width=20)
     with colcheck24:
-        st.image('gtbt_icon_yellow.png',width=15)
-
-    colcheck31,colcheck32,colcheck33,colcheck34 =st.columns([10,3,1,1])     
+        st.image('gtbt_good_green.png',width=20)
+        
+    colcheck31,colcheck32,colcheck33,colcheck34 =st.columns([1,10,3,1])   
     with colcheck31:
-        checkbox3 = st.checkbox(string3,value=False)
+        st.image('gtbt_icon_purple.png',width=15)  
     with colcheck32:
+        checkbox3 = st.checkbox(string3,value=False)
+    with colcheck33:
         st.markdown("""
         <font color='red'>
         Missed connection</font>""",unsafe_allow_html=True)
-    with colcheck33:
-        st.image('gtbt_bad_red.png',width=20)
     with colcheck34:
-        st.image('gtbt_icon_purple.png',width=15)
+        st.image('gtbt_bad_red.png',width=20)
     
     querydate = date_time_obj.strftime("%Y/%m/%d, %H:%M")
     querydate = str(querydate).replace(',','')
