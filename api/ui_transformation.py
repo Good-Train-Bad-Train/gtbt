@@ -35,7 +35,7 @@ def ui_transformer(start_city, end_city, user_date):
 
     time_of_day = day_categories(start_date)
 
-    stations_lat_lon = pd.read_csv('goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
+    stations_lat_lon = pd.read_csv('api/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
     stations = ['Köln Hbf',
                 'München Hbf',
                 'Mannheim Hbf',
