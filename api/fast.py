@@ -25,7 +25,7 @@ def predict(start_city: str, end_city: str, user_date: str):
     pipeline = joblib.load('model.joblib')
     y_pred = pipeline.predict(X_pred)
 
-    return dict(Delay = int(y_pred[0]))
+    return dict(Delay = int(y_pred[0])), weather
 
 if __name__ == "__main__":
     y_pred = predict('München',
