@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 import requests
 
-def ui_transformer(start_city, end_city, user_date):
+def ui_transformer(start_city, end_city, user_date, ice):
     """
     This function transforms user input into a DataFrame that's readable for the model
     to make the prediction.
@@ -18,7 +18,7 @@ def ui_transformer(start_city, end_city, user_date):
     start_city =  special_characters(start_city)
     end_city = special_characters(end_city)
 
-    assert isinstance(user_date, str)
+    #assert isinstance(user_date, str)
 
     # get weather forecast
     key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
@@ -42,7 +42,14 @@ def ui_transformer(start_city, end_city, user_date):
                 'Stuttgart Hbf',
                 'Würzburg Hbf',
                 'Frankfurt(Main)Hbf',
-                'Nürnberg Hbf'
+                'Nürnberg Hbf',
+                'Essen Hbf',
+                'Hamburg Hbf',
+                'Berlin Hbf',
+                'Hannover Hbf',
+                'Hagen Hbf',
+                'Erfurt Hbf',
+                'Göttingen'
                 ]
 
     coco_forecast = pd.read_csv('goodtrainbadtrain/data/weather_coco_forecast.csv', sep=';')
@@ -51,10 +58,10 @@ def ui_transformer(start_city, end_city, user_date):
     coco_forecast
 
     new_classes_forecast = {
-        'good': [29, 42, 43],
-        'medium': [2, 8, 9, 19, 20, 21, 24, 27, 28, 30, 31, 32, 33, 36, 38, 39, 40, 41],
-        'bad': [1, 4, 6, 11, 12, 14, 18, 23, 26, 35, 37],
-        'extreme': [3, 5, 7, 10, 13, 15, 16, 17, 22, 25, 34]
+        '1': [29, 42, 43],
+        '2': [2, 8, 9, 19, 20, 21, 24, 27, 28, 30, 31, 32, 33, 36, 38, 39, 40, 41],
+        '3': [1, 4, 6, 11, 12, 14, 18, 23, 26, 35, 37],
+        '4': [3, 5, 7, 10, 13, 15, 16, 17, 22, 25, 34]
     }
 
     weather_response = {}
@@ -111,6 +118,14 @@ def ui_transformer(start_city, end_city, user_date):
         'time_of_day':time_of_day
     })
 
+    ['trip','mean_delay','weekday','sin_time','cos_time','sin_day','cos_day','public_holiday',
+            'covid_lockdown','temp_oc_6', 'prcp_oc_6',
+            'snow_oc_6', 'wspd_oc_6', 'wpgt_oc_6', 'coco_oc_6', 'temp_dc_6',
+            'prcp_dc_6', 'snow_dc_6', 'wspd_dc_6', 'wpgt_dc_6', 'coco_dc_6',
+            'temp_oc_12', 'prcp_oc_12', 'snow_oc_12', 'wspd_oc_12', 'wpgt_oc_12',
+            'coco_oc_12', 'temp_dc_12', 'prcp_dc_12', 'snow_dc_12', 'wspd_dc_12',
+            'wpgt_dc_12', 'coco_dc_12']
+
     return X
 
 def special_characters(city):
@@ -122,6 +137,8 @@ def special_characters(city):
         return 'Würzburg'
     elif city == 'Nurnberg':
         return 'Nürnberg'
+    elif city == 'Gottingen':
+        return 'Göttingen'
     else:
         return city
 

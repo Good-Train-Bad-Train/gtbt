@@ -18,14 +18,34 @@ app.add_middleware(
 def index():
     return {"greeting": "Hello world"}
 
+# @app.get("/predict")
+# def predict(start_city: str, end_city: str, user_date: str):
+
+#     X_pred = ui_transformer(start_city, end_city, user_date)
+#     pipeline = joblib.load('model.joblib')
+#     y_pred = pipeline.predict(X_pred)
+
+#     return dict(Delay = int(y_pred[0]))
+
 @app.get("/predict")
-def predict(start_city: str, end_city: str, user_date: str):
+def predict(start_city: list, end_city: list, user_date: list, ice: list):
 
-    X_pred = ui_transformer(start_city, end_city, user_date)
-    pipeline = joblib.load('model.joblib')
-    y_pred = pipeline.predict(X_pred)
+    start_city = ['Koln','Mannheim']
+    end_city = ['Mannheim','Munchen']
+    user_date = ['2022-06-10 16:23',
+                 '2022-06-10 18:47']
+    ice = ['ICE 109', 'ICE 691']
 
-    return dict(Delay = int(y_pred[0])), weather
+    dict_result = {}
+
+    for index in range(len(start_city)):
+        X_pred = ui_transformer(start_city[index], end_city[index], user_date[index], ice[index])
+        pipeline = joblib.load('model.joblib')
+        y_pred = pipeline.predict(X_pred)
+        y_pred_proba = pipeline.predict_proba(X_pred)
+        dict_result[index] = [y_pred, y_pred_proba, X_pred.coco_max_combined, X_pred.mean_delay]
+
+    return dict_result #dict(Delay = int(y_pred[0]))
 
 if __name__ == "__main__":
     y_pred = predict('München',

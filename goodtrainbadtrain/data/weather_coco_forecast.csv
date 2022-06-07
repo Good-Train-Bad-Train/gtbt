@@ -1,0 +1,44 @@
+﻿Code;Weather Condition
+1;Blowing Or Drifting Snow
+2;Drizzle
+3;Heavy Drizzle
+4;Light Drizzle
+5;Heavy Drizzle/Rain
+6;Light Drizzle/Rain
+7;Duststorm
+8;Fog
+9;Freezing Drizzle/Freezing Rain
+10;Heavy Freezing Drizzle/Freezing Rain
+11;Light Freezing Drizzle/Freezing Rain
+12;Freezing Fog
+13;Heavy Freezing Rain
+14;Light Freezing Rain
+15;Funnel Cloud/Tornado
+16;Hail Showers
+17;Ice
+18;Lightning Without Thunder
+19;Mist
+20;Precipitation In Vicinity
+21;Rain
+22;Heavy Rain And Snow
+23;Light Rain And Snow
+24;Rain Showers
+25;Heavy Rain
+26;Light Rain
+27;Sky Coverage Decreasing
+28;Sky Coverage Increasing
+29;Sky Unchanged
+30;Smoke Or Haze
+31;Snow
+32;Snow And Rain Showers
+33;Snow Showers
+34;Heavy Snow
+35;Light Snow
+36;Squalls
+37;Thunderstorm
+38;Thunderstorm Without Precipitation
+39;Diamond Dust
+40;Hail
+41;Overcast
+42;Partially cloudy
+43;Clear
