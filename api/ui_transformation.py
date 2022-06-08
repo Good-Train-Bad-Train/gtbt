@@ -82,19 +82,13 @@ def weather_forecast(start_city, end_city, user_date):
 
     start_date = pd.Timestamp(user_date).round('H')
     start_date_00 = pd.Timestamp(start_date.year, start_date.month, start_date.day)
-    user_date_round_str = datetime.strftime(start_date, '%Y-%m-%d %H:%M')
     end_date = datetime.now() + timedelta(15)
     end_date_00 = pd.Timestamp(end_date.year, end_date.month, end_date.day) + timedelta(1) - timedelta(hours=1)
 
     start_date_str = datetime.strftime(start_date, '%Y-%m-%d')
     end_date_str = datetime.strftime(end_date, '%Y-%m-%d')
 
-    weekday = start_date.weekday()
-    month = start_date.month
-
-    time_of_day = day_categories(start_date)
-
-    stations_lat_lon = pd.read_csv('../goodtrainbadtrain/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
+    stations_lat_lon = pd.read_csv('api/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
     stations_name = ['Köln Hbf',
                 'München Hbf',
                 'Mannheim Hbf',
@@ -120,7 +114,7 @@ def weather_forecast(start_city, end_city, user_date):
     hours = [6, 12]
     c_variables = ['temp', 'prcp', 'snow', 'wspd', 'wpgt', 'coco']
 
-    coco_forecast = pd.read_csv('../goodtrainbadtrain/data/weather_coco_forecast.csv', sep=';')
+    coco_forecast = pd.read_csv('api/data/weather_coco_forecast.csv', sep=';')
     coco_forecast.set_index('Code', inplace=True)
     coco_forecast = coco_forecast.to_dict()['Weather Condition']
 
