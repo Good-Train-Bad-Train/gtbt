@@ -30,6 +30,7 @@ def predict(start_city: list, end_city: list, user_date: list, ice: list):
         y_pred_proba = pipeline.predict_proba(X_pred)[0]
         leg_dict['start_city'] = start_city[index]
         leg_dict['end_city'] = end_city[index]
+        leg_dict['train'] = ice[index]
         leg_dict['prediction'] = y_pred
         leg_dict['probability'] = y_pred_proba
         leg_dict['expected_conditions'] = X_pred.loc[0, 'coco_max_combined']
