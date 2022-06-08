@@ -64,13 +64,13 @@ def ui_transformer(start_city, end_city, user_date, ice_name):
         'cos_day': cos_day,
         'public_holiday': public_holiday,
         'covid_lockdown': covid_lockdown,
-        'temp_max_combined': weather_df['temp_max_combined'],
-        'temp_min_combined': weather_df['temp_min_combined'],
-        'prcp_max_combined': weather_df['prcp_max_combined'],
-        'snow_max_combined': weather_df['snow_max_combined'],
-        'wspd_max_combined': weather_df['wspd_max_combined'],
-        'wpgt_max_combined': weather_df['wpgt_max_combined'],
-        'coco_max_combined': weather_df['coco_max_combined'],
+        'temp_max_combined': weather_df.loc[0, 'temp_max_combined'],
+        'temp_min_combined': weather_df.loc[0, 'temp_min_combined'],
+        'prcp_max_combined': weather_df.loc[0, 'prcp_max_combined'],
+        'snow_max_combined': weather_df.loc[0, 'snow_max_combined'],
+        'wspd_max_combined': weather_df.loc[0, 'wspd_max_combined'],
+        'wpgt_max_combined': weather_df.loc[0, 'wpgt_max_combined'],
+        'coco_max_combined': weather_df.loc[0, 'coco_max_combined'],
     })
 
     return X
@@ -82,7 +82,7 @@ def weather_forecast(start_city, end_city, user_date):
 
     start_date = pd.Timestamp(user_date).round('H')
     start_date_00 = pd.Timestamp(start_date.year, start_date.month, start_date.day)
-    end_date = datetime.now() + timedelta(15)
+    end_date = datetime.now() + timedelta(14)
     end_date_00 = pd.Timestamp(end_date.year, end_date.month, end_date.day) + timedelta(1) - timedelta(hours=1)
 
     start_date_str = datetime.strftime(start_date, '%Y-%m-%d')
