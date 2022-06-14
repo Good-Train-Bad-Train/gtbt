@@ -1,0 +1,10 @@
+streamlit
+folium
+numpy
+pandas
+datetime
+streamlit_folium
+requests
+openrouteservice
+gunicorn
+pyhafas
