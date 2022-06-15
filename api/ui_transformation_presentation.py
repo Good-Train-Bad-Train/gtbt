@@ -78,7 +78,7 @@ def ui_transformer(start_city, end_city, user_date, ice_name):
 
 def weather_forecast(start_city, end_city, user_date):
     # get weather forecast
-    key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
+    key = 'xxxxx' #Add here your own key from https://www.visualcrossing.com
 
     start_date = pd.Timestamp(user_date).round('H')
     start_date_00 = pd.Timestamp(start_date.year, start_date.month, start_date.day)
@@ -204,7 +204,7 @@ def get_weather_data(cities, user_date):
 
     weather_response = {}
     for city in cities:
-        key = '7DYDYYY5GVYHQA52HXFQV5A5Y'
+        key = 'xxxx' #Add here your own key from https://www.visualcrossing.com
         stations_lat_lon = pd.read_csv('api/data/Deutsche_Bahn_Haltestellen.csv', usecols=['X', 'Y', 'NAME'])
         lat = stations_lat_lon[stations_lat_lon['NAME'] == city]['Y'].mean()
         lon = stations_lat_lon[stations_lat_lon['NAME'] == city]['X'].mean()
