@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-
+import pickle as pickle
 from datetime import datetime, timedelta, date
 
 import requests
@@ -125,7 +125,13 @@ def weather_forecast(start_city, end_city, user_date):
         4: [3, 5, 7, 10, 13, 15, 16, 17, 22, 25, 34]
     }
 
-    weather_response = {}
+    ### THIS CHANGED
+    db_path = 'api/data/weather_forecast.pickle'
+    with open(db_path, 'rb') as handle:
+        weather_response = pickle.load(handle)
+    ### UNTIL HERE
+
+    #weather_response = {}
     weather = {}
     weather_dict = {}
     df = pd.DataFrame()
@@ -133,12 +139,14 @@ def weather_forecast(start_city, end_city, user_date):
         lat = stations_lat_lon[stations_lat_lon['NAME'] == s]['Y'].mean()
         lon = stations_lat_lon[stations_lat_lon['NAME'] == s]['X'].mean()
 
-        url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{str(lat)},{str(lon)}/{start_date_str}/{end_date_str}"
-        params = {'key': key,
-                'unitGroup': 'metric'}
-        response = requests.get(url, params=params).json()
+        #url = f"https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/{str(lat)},{str(lon)}/{start_date_str}/{end_date_str}"
+        #params = {'key': key,
+        #        'unitGroup': 'metric'}
+        #response = requests.get(url, params=params).json()
 
-        weather_response[s] = response
+        #weather_response[s] = response
+
+        response = weather_response[s] ### THIS CHANGED
 
         number_of_days = (end_date - start_date).days + 1
         variables = ['datetime', 'temp', 'precip', 'snow', 'windspeed', 'windgust', 'conditions']
