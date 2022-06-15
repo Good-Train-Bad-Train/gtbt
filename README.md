@@ -1,74 +1,18 @@
-# Data analysis
-- Document here the project: goodtrainbadtrain
-- Description: Project Description
-- Data Source:
-- Type of analysis:
 
-Please document the project the better you can.
+![logo](http://goodtrainbadtrain.herokuapp.com/media/82fc3297c83d254d2eddf1a4df093b147d09e3a5666670ca98be86f3.png)
 
-# Startup the project
+The experience of booking a train with Deutsche Bahn often requires guesswork. At the time of booking, you don't know if a train is usually delayed, or whether other information could help you make an informed decision about which train to choose. We developed a machine learning model to help people make better decisions for their train journeys in Germany.
 
-The initial setup.
+## How it works
 
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
+We gathered data of all train rides in the past 2 years between Cologne, Munich and Berlin and combined it with weather information for each ride. We then organized data into a format that could be understood by a machine learning model - for example, we encoded the time and date and name of the train -, and then trained it using more than 40 features. Because the past two years have been very unusual, we filtered data from Covid lockdown periods, and also flagged all major holidays so the model could understand special circumstances like those.
 
-Unittest test:
-```bash
-make clean install test
-```
+What is happening behind the scenes here is that we are sending the information you select to Deutsche Bahn, getting a list of journeys and then checking whether our model thinks you will catch a good or bad train. We do that by sending this info to our API, which gathers weather predictions from the future and combines that with other info we have about your ride, producing a prediction.
 
-Check for goodtrainbadtrain in gitlab.com/{group}.
-If your project is not set please add it:
+## Deploy
 
-- Create a new project on `gitlab.com/{group}/goodtrainbadtrain`
-- Then populate it:
+We developed our frontend with Streamlit, and deployed it with Heroku. Our API is hosted at GCP. Please check our site here: http://goodtrainbadtrain.herokuapp.com/
 
-```bash
-##   e.g. if group is "{group}" and project_name is "goodtrainbadtrain"
-git remote add origin git@github.com:{group}/goodtrainbadtrain.git
-git push -u origin master
-git push -u origin --tags
-```
+## About us
 
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-goodtrainbadtrain-run
-```
-
-# Install
-
-Go to `https://github.com/{group}/goodtrainbadtrain` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/goodtrainbadtrain.git
-cd goodtrainbadtrain
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-goodtrainbadtrain-run
-```
+This project was developed by [Stefano Pupe](https://github.com/spupe), [Marie Macnee](https://github.com/mariemacnee), [Boris Bohsem](https://github.com/boribo7) and [Juan Cotrino](https://github.com/juancotrino) in a 2-week sprint as a requirement for the completion of a Data Science Bootcamp at Le Wagon. We would like to thank Deutsche Bahn, [meteostat.net](https://meteostat.net/en/) and Statweather for their APIs, Jose Aponte for the logo and [zugfinder.net](https://www.zugfinder.net/en/start) for the train dataset.

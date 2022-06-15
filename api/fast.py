@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 import joblib
 from api.ui_transformation import ui_transformer
+# from api.ui_transformation_presentation import ui_transformer
 
 app = FastAPI()
 
@@ -69,6 +70,7 @@ def predict(start_city: str, end_city: str, user_date: str, ice: str):
     expected_weather_conditions_output = ','.join(expected_weather_conditions_output)
     mean_delay_output = ','.join(mean_delay_output)
 
+
     leg_dict = dict(
         start_city = start_city_output,
         end_city = end_city_output,
@@ -94,5 +96,3 @@ if __name__ == "__main__":
                      ice)
 
     print(y_pred)
-
-#http://127.0.0.1:8000/predict?start_city=Munchen&end_city=Koln&user_date=2022-06-06 17:00
