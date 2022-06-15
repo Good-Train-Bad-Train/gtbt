@@ -1,0 +1,61 @@
+Datenbank Fernverkehr,,,,,,,,
+Dieses Archiv bietet umfangreiche Recherchemöglichkeiten zum Fernverkehr der Deutschen Bahnen seit 1977,,,,,,,,
+deutschenglish»,,,,,,,,
+Sonderabfragen: Geänderte Fernverkehrszüge aufgrund der Brückensperrung Wiesbaden,,,,,,,,
+"Zeigt alle Fernverkehrszüge an, die aufgrund der Brückensperrung in Wiesbaden einen geänderten Laufweg/Fahrplan haben.",,,,,,,,
+Es wurden 45 Datensätze gefunden.,,,,,,,,
+Zug-ID,Fahrplanjahr,Zuggattung,Zugnummer,Startbahnhof,Zielbahnhof,Grund,,train
+20210100510,2021,ICE,510,München,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flugh Fernbf (16.8.-2.9. und 4.-28.10. in Mainz),ansehen,ICE510
+20210100887,2021,ICE,887,Hamburg-Altona,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Hbf,ansehen,ICE887
+20210101190,2021,ICE,1190,Frankfurt(M)Flughafen Fernbf,Wiesbaden,Zug kommt als ICE 1110 aus München Hbf; Brückenschaden: Zug endet seit 20.6. in Frankfurt Flugh Fern,ansehen,ICE1190
+20210101510,2021,ICE,1510,Stuttgart,Wiesbaden,Brückenschaden: Zug endet seit 21.6. in Mainz Hbf,ansehen,ICE1510
+20210101554,2021,ICE,1554,Dresden,Wiesbaden,"Brückenschaden: Zug endet 18.-26.6. in Frankfurt(M)Flughafen Fernbf, ab 27.6. in Frankfurt(M)Hbf",ansehen,ICE1554
+20210101556,2021,ICE,1556,Dresden,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1556
+20210101558,2021,ICE,1558,Dresden,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1558
+20210101650,2021,ICE,1650,Dresden,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1650
+20210101652,2021,ICE,1652,Dresden,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf/Frankfurt(M)Hbf,ansehen,ICE1652
+20210101654,2021,ICE,1654,Dresden,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1654
+20210101656,2021,ICE,1656,Leipzig,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Frankfurt(M)Flughafen Fernbf/Frankfurt(M)Hbf,ansehen,ICE1656
+20210101912,2021,IC,1912,Stuttgart,Wiesbaden,Brückenschaden: Zug endet seit 18.6. in Mainz Hbf,ansehen,IC1912
+20220101114,2022,ICE,1114,Stuttgart,Wiesbaden,Brückenschaden: Mainz Hbf-Wiesbaden Hbf ab 23.12.,ansehen,ICE1114
+20220101510,2022,ICE,1510,Stuttgart,Wiesbaden,Brückenschaden: Mainz Hbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1510
+20220101554,2022,ICE,1554,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Hbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1554
+20220101556,2022,ICE,1556,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1556
+20220101558,2022,ICE,1558,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1558
+20220101650,2022,ICE,1650,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1650
+20220101652,2022,ICE,1652,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1652
+20220101654,2022,ICE,1654,Dresden,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1654
+20220101656,2022,ICE,1656,Leipzig,Wiesbaden,Brückenschaden: Frankfurt(M)Flughafen Fernbf-Wiesbaden Hbf ab 22.12.,ansehen,ICE1656
+20220101912,2022,IC,1912,Stuttgart,Wiesbaden,Brückenschaden: Mainz Hbf-Wiesbaden Hbf ab 22.12.,ansehen,IC1912
+20210100711,2021,ICE,711,Köln,Stuttgart,"Brückenschaden: seit 18.6. ohne Halt in Wiesbaden Hbf, Mainz Hbf",ansehen,ICE711
+20210101913,2021,IC,1913,Wiesbaden,Stuttgart,Brückenschaden: Zug beginnt seit 19.6. in Mainz Hbf,ansehen,IC1913
+20220101913,2022,IC,1913,Wiesbaden,Stuttgart,Brückenschaden: Wiesbaden Hbf-Mainz Hbf ab 24.12.,ansehen,IC1913
+20210100991,2021,ICE,991,Wiesbaden,München,Brückenschaden: Zug beginnt seit 18.6. in Mainz Hbf,ansehen,ICE991
+20210101659,2021,ICE,1659,Wiesbaden,Leipzig,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1659
+20220101659,2022,ICE,1659,Wiesbaden,Leipzig,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1659
+20210100710,2021,ICE,710,Stuttgart,Köln,"Brückenschaden: seit 18.6. ohne Halt in Wiesbaden Hbf, Mainz Hbf",ansehen,ICE710
+20210100712,2021,ICE,712,Mainz,Köln,"Brückenschaden: seit 18.6. zeitweise ab Frankfurt(M)Flughafen Fernbf, seit 29.6. ab Wiesbaden Hbf",ansehen,ICE712
+20210100672,2021,ICE,672,Wiesbaden,Hamburg-Altona,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Hbf,ansehen,ICE672
+20220100672,2022,ICE,672,Wiesbaden,Hamburg-Altona,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Hbf ab 22.12.,ansehen,ICE672
+20210101224,2021,ICE,1224,Würzburg,Frankfurt(Main),Zug kommt als ICE 720 aus München Hbf; ab 3.7. Laufweg ab Hamm(Westf)Hbf über Wuppertal Hbf,ansehen,ICE1224
+20210101557,2021,ICE,1557,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Hbf,ansehen,ICE1557
+20210101559,2021,ICE,1559,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Hbf,ansehen,ICE1559
+20210101651,2021,ICE,1651,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1651
+20210101653,2021,ICE,1653,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1653
+20210101655,2021,ICE,1655,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1655
+20210101657,2021,ICE,1657,Wiesbaden,Dresden,Brückenschaden: Zug beginnt seit 18.6. in Frankfurt(M)Flughafen Fernbf,ansehen,ICE1657
+20220101557,2022,ICE,1557,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Hbf ab 22.12.,ansehen,ICE1557
+20220101559,2022,ICE,1559,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1559
+20220101651,2022,ICE,1651,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1651
+20220101653,2022,ICE,1653,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1653
+20220101655,2022,ICE,1655,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1655
+20220101657,2022,ICE,1657,Wiesbaden,Dresden,Brückenschaden: Wiesbaden Hbf-Frankfurt(M)Flughafen Fernbf ab 22.12.,ansehen,ICE1657
+Zum Sortieren der Tabelle klicken Sie bitte auf eine Überschrift im Tabellenkopf.,,,,,,,,
+Neue Suche,,,,,,,,
+Fehler melden,,,,,,,,
+"Anleitung, Hilfe & Informationen",,,,,,,,
+Aktuelle Wagenreihungen,,,,,,,,
+Kontakt,,,,,,,,
+Impressum,,,,,,,,
+Datenschutzerklärung,,,,,,,,
+© Datenbank Fernverkehr — Marcus Grahnert & Marco Krings 2012–2022 ,,,,,,,,
