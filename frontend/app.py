@@ -1,7 +1,5 @@
 ### Imports and functions
 
-#from numpy import cumprod
-#import numpy as np
 from numpy import ones_like
 from timeit import default_timer as timer
 import streamlit as st
@@ -201,13 +199,14 @@ def calldb_preprocess(origin,destination,date):
     print(leglist3)
 
     return journeydf,leglist1,leglist2,leglist3
-#https://gtbt3image-4muwooak2q-ew.a.run.app/predict?start_city={pickup}&end_city={dropoff}&user_date={querydate}'
+
 
 def callapi(pickup,dropoff,querydate='2022-06-10 15:15:00',train='ICE 109'):
     #response = requests.get('https://finalappfix-4muwooak2q-ew.a.run.app/predict',
     #params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     #response = requests.get('https://finalappgbm-4muwooak2q-ew.a.run.app/predict',   
-    response = requests.get('https://finalappgbmfri-4muwooak2q-ew.a.run.app/predict',
+    #response = requests.get('https://finalappgbmfri-4muwooak2q-ew.a.run.app/predict', 
+    response = requests.get('https://finalapp22june-4muwooak2q-ew.a.run.app',
     params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     print(response)
     start_city = response["start_city"]
