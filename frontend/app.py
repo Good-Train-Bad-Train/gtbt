@@ -1,7 +1,5 @@
 ### Imports and functions
 
-#from numpy import cumprod
-#import numpy as np
 from numpy import ones_like
 from timeit import default_timer as timer
 import streamlit as st
@@ -189,7 +187,7 @@ def calldb_preprocess(origin,destination,date):
                 'Nürnberg Hbf': [49.4456, 11.0825], 'Würzburg Hbf': [49.8024, 9.9356], 
                 'Berlin Hbf (tief)': [52.5251, 13.4694] ,'Berlin Hbf': [52.5251, 13.3694], 'Berlin Spandau': [52.5251, 13.3694], 
                 'Hamburg Hbf': [53.5530, 10.0066],  'Hamm(Westf)':  [851.6784, 7.8089],
-                'Düsseldorf Hbf': [51.2198, 6.7945], 'Stuttgart Hbf':[48.7832, 9.1823], 
+                'Düsseldorf Hbf': [51.2198, 6.7945], 'Stuttgart Hbf':[48.7832, 9.1823], 'Stuttgart': [48.7832, 9.1823],
                 'Essen Hbf': [51.4504, 7.0129] , 'Hagen(Westf) Bahnhof’': [51.3626, 7.4617],
                 'Hagen Hbf':  [51.3626, 7.4617], 'Hannover Hbf': [52.3765, 9.7410],
                 'Erfurt Hbf': [50.9725, 11.0380],'Göttingen': [51.5366, 9.9268]}
@@ -201,13 +199,14 @@ def calldb_preprocess(origin,destination,date):
     print(leglist3)
 
     return journeydf,leglist1,leglist2,leglist3
-#https://gtbt3image-4muwooak2q-ew.a.run.app/predict?start_city={pickup}&end_city={dropoff}&user_date={querydate}'
+
 
 def callapi(pickup,dropoff,querydate='2022-06-10 15:15:00',train='ICE 109'):
     #response = requests.get('https://finalappfix-4muwooak2q-ew.a.run.app/predict',
     #params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     #response = requests.get('https://finalappgbm-4muwooak2q-ew.a.run.app/predict',   
-    response = requests.get('https://finalappgbmfri-4muwooak2q-ew.a.run.app/predict',
+    #response = requests.get('https://finalappgbmfri-4muwooak2q-ew.a.run.app/predict', 
+    response = requests.get('https://finalapp22june-4muwooak2q-ew.a.run.app',
     params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     print(response)
     start_city = response["start_city"]
