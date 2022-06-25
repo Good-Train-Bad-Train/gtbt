@@ -15,7 +15,6 @@ from pyhafas.profile import VSNProfile
 
 @st.cache
 def create_journeydf(journeylist):
-    # TODO: implement proper stops along the way. DB API gives back a list of stations with coordinates, ie: journeys[0].legs[0].stopovers[0].stop.latitude
     journey_start = []
     journey_end = []    
     journey_origin = []
@@ -206,7 +205,7 @@ def callapi(pickup,dropoff,querydate='2022-06-10 15:15:00',train='ICE 109'):
     #params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     #response = requests.get('https://finalappgbm-4muwooak2q-ew.a.run.app/predict',   
     #response = requests.get('https://finalappgbmfri-4muwooak2q-ew.a.run.app/predict', 
-    response = requests.get('https://finalapp22june-4muwooak2q-ew.a.run.app',
+    response = requests.get('https://finalapp22june-4muwooak2q-ew.a.run.app/predict',
     params={'start_city': pickup, 'end_city': dropoff, 'user_date': querydate, 'ice': train}).json()
     print(response)
     start_city = response["start_city"]
