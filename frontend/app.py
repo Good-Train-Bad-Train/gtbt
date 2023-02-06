@@ -280,7 +280,7 @@ else:
     notcheckbox3 = True
 
 st.set_page_config(page_title='Good Train Bad Train', page_icon='gtbt_good.png', layout="centered", initial_sidebar_state="auto", menu_items=None)
-st.image('gtbtlogo_black.png')
+st.image('frontend/gtbtlogo_black.png')
 client = HafasClient(VSNProfile())
 
 st.markdown("""
