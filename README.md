@@ -1,5 +1,5 @@
 
-![logo](http://goodtrainbadtrain.herokuapp.com/media/82fc3297c83d254d2eddf1a4df093b147d09e3a5666670ca98be86f3.png)
+![logo](frontend/logo.png)
 
 The experience of booking a train with Deutsche Bahn often requires guesswork. At the time of booking, you don't know if a train is usually delayed, or whether other information could help you make an informed decision about which train to choose. We developed a machine learning model to help people make better decisions for their train journeys in Germany.
 
